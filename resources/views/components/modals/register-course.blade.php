@@ -13,7 +13,7 @@
                     @csrf
                     <label for="" class="d-flex flex-column">
                         Nome
-                        <input required name="name" value="{{ old('name') }}" type="text" placeholder="Digite aqui">
+                        <input required name="name" id="name" type="text" placeholder="Digite aqui">
                     </label>
                     <label for="" class="d-flex flex-column">
                         Dias do curso
@@ -22,32 +22,32 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Segunda
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_monday') ? 'checked="checked"' : '' }} name="weekday_monday" id="weekday_monday"> Segunda
                                     </label>
                                 </li>
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Terçaa
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_tuesday') ? 'checked="checked"' : '' }} name="weekday_tuesday" id="weekday_tuesday"> Terça
                                     </label>
                                 </li>
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Quarta
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_wednesday') ? 'checked="checked"' : '' }} name="weekday_wednesday" id="weekday_wednesday"> Quarta
                                     </label>
                                 </li>
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Quinta
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_thursday') ? 'checked="checked"' : '' }} name="weekday_thursday" id="weekday_thursday"> Quinta
                                     </label>
                                 </li>
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Sexta
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_friday') ? 'checked="checked"' : '' }} name="weekday_friday" id="weekday_friday"> Sexta
                                     </label>
                                 </li>
                                 <li>
                                     <label class="btn btn-secondary">
-                                        <input type="checkbox" name="options" id="option3"> Sábado
+                                        <input type="checkbox" value="{{true}}" {{ old('weekday_saturday') ? 'checked="checked"' : '' }} name="weekday_saturday" id="weekday_saturday"> Sábado
                                     </label>
                                 </li>
                             </ul>
@@ -57,7 +57,7 @@
                     <div class="d-flex justify-content-between mt-5">
                         <label class="d-flex flex-column align-items-center">
                             <div class="d-flex align-items-center">
-                                <input class="radio" type="radio" name="options" id="option3">
+                                <input class="radio" value="{{ true }}" type="radio" name="time_morning" id="time_morning">
                                 <img src="{!! asset("assets/icon_morning.svg") !!}" alt="">
                             </div>
                             <p>Manhã</p>
@@ -65,7 +65,7 @@
 
                         <label class="d-flex flex-column align-items-center">
                             <div class="d-flex align-items-center">
-                                <input class="radio" type="radio" name="options" id="option3">
+                                <input class="radio" value="{{ true }}" type="radio" name="time_afternoon" id="time_afternoon">
                                 <img src="{!! asset("assets/icon_afternoon.svg") !!}" alt="">
                             </div>
                             <p>Tarde</p>
@@ -73,7 +73,7 @@
 
                         <label class="d-flex flex-column align-items-center">
                             <div class="d-flex align-items-center">
-                                <input class="radio" type="radio" name="options" id="option3">
+                                <input class="radio" value="{{ true }}" type="radio" name="time_night" id="time_night">
                                 <img src="{!! asset("assets/icon_night.svg") !!}" alt="">
                             </div>
                             <p>Noite</p>

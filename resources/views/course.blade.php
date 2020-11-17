@@ -8,9 +8,9 @@
         </div>
 
         <div class="pages-course-main d-flex flex-wrap">
-            @for($i = 0; $i < 9; $i++)
+            @foreach($courses as $course)
                 @include('components.card-pages-courses')
-            @endfor
+            @endforeach
         </div>
     </div>
     @include('components.menu-pages')
